@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d5dac79-c8e3-454a-9db4-27f559554a49" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MWD$init_db.coverage" NAME="init_db Coverage Results" MODIFIED="1504927610824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MWD$test.coverage" NAME="test Coverage Results" MODIFIED="1504927624447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1504927602892" expanded="true" signature="1000:1049" ph="SELECT * FRO... COLUMNS" />
+                <marker date="1504927602892" expanded="true" signature="1000:1127" ph="SELECT * FRO... COLUMNS" />
+                <marker date="1504927602892" expanded="true" signature="1276:1327" ph="alter table mltags... " />
+                <marker date="1504927602892" expanded="true" signature="1398:1431" ph="select min(t... mltags" />
+                <marker date="1504927602892" expanded="true" signature="1490:1523" ph="select max(t... mltags" />
+                <marker date="1504927602892" expanded="true" signature="1583:1611" ph="select times... " />
+                <marker date="1504927602892" expanded="true" signature="2048:2094" ph="update mltag... " />
+                <marker date="1504927602892" expanded="true" signature="2191:2239" ph="select tagid... master" />
+                <marker date="1504927602892" expanded="true" signature="2474:2516" ph="select count... imdb_actor_info" />
+                <marker date="1504927602892" expanded="true" signature="2661:2718" ph="select count... master" />
+                <marker date="1504927602892" expanded="true" signature="3786:3831" ph="select tagid... task2" />
+                <marker date="1504927602892" expanded="true" signature="4064:4098" ph="select count... imdb_actor_info" />
+                <marker date="1504927602892" expanded="true" signature="4064:4106" ph="select count... mlmovies" />
+                <marker date="1504927602892" expanded="true" signature="4465:4519" ph="select count... master" />
+                <marker date="1504927602892" expanded="true" signature="5609:5656" ph="select tagid... mltags" />
+                <marker date="1504927602892" expanded="true" signature="5890:5927" ph="select count... mlmovies" />
+                <marker date="1504927602892" expanded="true" signature="5890:5932" ph="select count... mlusers" />
+                <marker date="1504927602892" expanded="true" signature="6325:6381" ph="select count... task2" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init_db.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/init_db.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="52" column="18" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="52" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1504927071189" expanded="true" signature="325:401" ph="create TABLE... mltags" />
+                <marker date="1504927071189" expanded="true" signature="325:497" ph="create TABLE... mltags" />
+                <marker date="1504927071189" expanded="true" signature="418:497" ph="create TABLE... mlmovies" />
+                <marker date="1504927071189" expanded="true" signature="513:603" ph="create TABLE... mlratings" />
+                <marker date="1504927071189" expanded="true" signature="619:652" ph="create TABLE... mlusers" />
+                <marker date="1504927071189" expanded="true" signature="668:741" ph="create TABLE... movie_actor" />
+                <marker date="1504927071189" expanded="true" signature="757:837" ph="create TABLE... imdb_actor_info" />
+                <marker date="1504927071189" expanded="true" signature="853:906" ph="create TABLE... genome_tags" />
+                <marker date="1504927071189" expanded="true" signature="1216:1297" ph="INSERT INTO `mltags`... " />
+                <marker date="1504927071189" expanded="true" signature="1216:1740" ph="INSERT INTO `mltags`... " />
+                <marker date="1504927071189" expanded="true" signature="1216:1810" ph="INSERT INTO `mltags`... " />
+                <marker date="1504927071189" expanded="true" signature="1297:1740" ph="INSERT INTO `imdb_actor_info`... " />
+                <marker date="1504927071189" expanded="true" signature="1496:1740" ph="INSERT INTO `imdb_actor_info`... " />
+                <marker date="1504927071189" expanded="true" signature="1666:1740" ph="INSERT INTO `imdb_actor_info`... " />
+                <marker date="1504927071189" expanded="true" signature="1957:2084" ph="SELECT * FRO... COLUMNS" />
+                <marker date="1504927071189" expanded="true" signature="2215:2258" ph="INSERT INTO `mlusers`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>alter</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/init_db.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="63" />
+    <option name="y" value="58" />
+    <option name="width" value="944" />
+    <option name="height" value="1085" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MWD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MWD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="init_db" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/init_db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="MWD" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MWD" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.init_db" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.init_db" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d5dac79-c8e3-454a-9db4-27f559554a49" name="Default" comment="" />
+      <created>1504142729369</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1504142729369</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="63" y="58" width="944" height="1085" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19067797" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24011858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1504927602892" expanded="true" signature="1000:1049" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1000:1127" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1276:1327" ph="alter table mltags... " />
+            <marker date="1504927602892" expanded="true" signature="1398:1431" ph="select min(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1490:1523" ph="select max(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1583:1611" ph="select times... " />
+            <marker date="1504927602892" expanded="true" signature="2048:2094" ph="update mltag... " />
+            <marker date="1504927602892" expanded="true" signature="2191:2239" ph="select tagid... master" />
+            <marker date="1504927602892" expanded="true" signature="2474:2516" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="2661:2718" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="3786:3831" ph="select tagid... task2" />
+            <marker date="1504927602892" expanded="true" signature="4064:4098" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="4064:4106" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="4465:4519" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="5609:5656" ph="select tagid... mltags" />
+            <marker date="1504927602892" expanded="true" signature="5890:5927" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="5890:5932" ph="select count... mlusers" />
+            <marker date="1504927602892" expanded="true" signature="6325:6381" ph="select count... task2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1504927602892" expanded="true" signature="1000:1049" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1000:1127" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1276:1327" ph="alter table mltags... " />
+            <marker date="1504927602892" expanded="true" signature="1398:1431" ph="select min(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1490:1523" ph="select max(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1583:1611" ph="select times... " />
+            <marker date="1504927602892" expanded="true" signature="2048:2094" ph="update mltag... " />
+            <marker date="1504927602892" expanded="true" signature="2191:2239" ph="select tagid... master" />
+            <marker date="1504927602892" expanded="true" signature="2474:2516" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="2661:2718" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="3786:3831" ph="select tagid... task2" />
+            <marker date="1504927602892" expanded="true" signature="4064:4098" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="4064:4106" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="4465:4519" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="5609:5656" ph="select tagid... mltags" />
+            <marker date="1504927602892" expanded="true" signature="5890:5927" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="5890:5932" ph="select count... mlusers" />
+            <marker date="1504927602892" expanded="true" signature="6325:6381" ph="select count... task2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1504927602892" expanded="true" signature="1000:1049" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1000:1127" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1276:1327" ph="alter table mltags... " />
+            <marker date="1504927602892" expanded="true" signature="1398:1431" ph="select min(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1490:1523" ph="select max(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1583:1611" ph="select times... " />
+            <marker date="1504927602892" expanded="true" signature="2048:2094" ph="update mltag... " />
+            <marker date="1504927602892" expanded="true" signature="2191:2239" ph="select tagid... master" />
+            <marker date="1504927602892" expanded="true" signature="2474:2516" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="2661:2718" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="3786:3831" ph="select tagid... task2" />
+            <marker date="1504927602892" expanded="true" signature="4064:4098" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="4064:4106" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="4465:4519" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="5609:5656" ph="select tagid... mltags" />
+            <marker date="1504927602892" expanded="true" signature="5890:5927" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="5890:5932" ph="select count... mlusers" />
+            <marker date="1504927602892" expanded="true" signature="6325:6381" ph="select count... task2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1504927602892" expanded="true" signature="1000:1049" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1000:1127" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1276:1327" ph="alter table mltags... " />
+            <marker date="1504927602892" expanded="true" signature="1398:1431" ph="select min(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1490:1523" ph="select max(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1583:1611" ph="select times... " />
+            <marker date="1504927602892" expanded="true" signature="2048:2094" ph="update mltag... " />
+            <marker date="1504927602892" expanded="true" signature="2191:2239" ph="select tagid... master" />
+            <marker date="1504927602892" expanded="true" signature="2474:2516" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="2661:2718" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="3786:3831" ph="select tagid... task2" />
+            <marker date="1504927602892" expanded="true" signature="4064:4098" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="4064:4106" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="4465:4519" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="5609:5656" ph="select tagid... mltags" />
+            <marker date="1504927602892" expanded="true" signature="5890:5927" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="5890:5932" ph="select count... mlusers" />
+            <marker date="1504927602892" expanded="true" signature="6325:6381" ph="select count... task2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1504927602892" expanded="true" signature="1000:1049" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1000:1127" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1276:1327" ph="alter table mltags... " />
+            <marker date="1504927602892" expanded="true" signature="1398:1431" ph="select min(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1490:1523" ph="select max(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1583:1611" ph="select times... " />
+            <marker date="1504927602892" expanded="true" signature="2048:2094" ph="update mltag... " />
+            <marker date="1504927602892" expanded="true" signature="2191:2239" ph="select tagid... master" />
+            <marker date="1504927602892" expanded="true" signature="2474:2516" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="2661:2718" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="3786:3831" ph="select tagid... task2" />
+            <marker date="1504927602892" expanded="true" signature="4064:4098" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="4064:4106" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="4465:4519" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="5609:5656" ph="select tagid... mltags" />
+            <marker date="1504927602892" expanded="true" signature="5890:5927" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="5890:5932" ph="select count... mlusers" />
+            <marker date="1504927602892" expanded="true" signature="6325:6381" ph="select count... task2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1504927602892" expanded="true" signature="1000:1049" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1000:1127" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927602892" expanded="true" signature="1276:1327" ph="alter table mltags... " />
+            <marker date="1504927602892" expanded="true" signature="1398:1431" ph="select min(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1490:1523" ph="select max(t... mltags" />
+            <marker date="1504927602892" expanded="true" signature="1583:1611" ph="select times... " />
+            <marker date="1504927602892" expanded="true" signature="2048:2094" ph="update mltag... " />
+            <marker date="1504927602892" expanded="true" signature="2191:2239" ph="select tagid... master" />
+            <marker date="1504927602892" expanded="true" signature="2474:2516" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="2661:2718" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="3786:3831" ph="select tagid... task2" />
+            <marker date="1504927602892" expanded="true" signature="4064:4098" ph="select count... imdb_actor_info" />
+            <marker date="1504927602892" expanded="true" signature="4064:4106" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="4465:4519" ph="select count... master" />
+            <marker date="1504927602892" expanded="true" signature="5609:5656" ph="select tagid... mltags" />
+            <marker date="1504927602892" expanded="true" signature="5890:5927" ph="select count... mlmovies" />
+            <marker date="1504927602892" expanded="true" signature="5890:5932" ph="select count... mlusers" />
+            <marker date="1504927602892" expanded="true" signature="6325:6381" ph="select count... task2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="52" column="18" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="52" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1504927071189" expanded="true" signature="325:401" ph="create TABLE... mltags" />
+            <marker date="1504927071189" expanded="true" signature="325:497" ph="create TABLE... mltags" />
+            <marker date="1504927071189" expanded="true" signature="418:497" ph="create TABLE... mlmovies" />
+            <marker date="1504927071189" expanded="true" signature="513:603" ph="create TABLE... mlratings" />
+            <marker date="1504927071189" expanded="true" signature="619:652" ph="create TABLE... mlusers" />
+            <marker date="1504927071189" expanded="true" signature="668:741" ph="create TABLE... movie_actor" />
+            <marker date="1504927071189" expanded="true" signature="757:837" ph="create TABLE... imdb_actor_info" />
+            <marker date="1504927071189" expanded="true" signature="853:906" ph="create TABLE... genome_tags" />
+            <marker date="1504927071189" expanded="true" signature="1216:1297" ph="INSERT INTO `mltags`... " />
+            <marker date="1504927071189" expanded="true" signature="1216:1740" ph="INSERT INTO `mltags`... " />
+            <marker date="1504927071189" expanded="true" signature="1216:1810" ph="INSERT INTO `mltags`... " />
+            <marker date="1504927071189" expanded="true" signature="1297:1740" ph="INSERT INTO `imdb_actor_info`... " />
+            <marker date="1504927071189" expanded="true" signature="1496:1740" ph="INSERT INTO `imdb_actor_info`... " />
+            <marker date="1504927071189" expanded="true" signature="1666:1740" ph="INSERT INTO `imdb_actor_info`... " />
+            <marker date="1504927071189" expanded="true" signature="1957:2084" ph="SELECT * FRO... COLUMNS" />
+            <marker date="1504927071189" expanded="true" signature="2215:2258" ph="INSERT INTO `mlusers`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
