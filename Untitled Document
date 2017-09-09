@@ -1,0 +1,88 @@
+mysqlimport --ignore-lines=1 --fields-terminated-by=, --local -uroot -p MWD_P1 mltags.csv
+
+create TABLE (userid INT, movieid INT, tagid INT, timestamp DATETIME);
+
+select m.movieName,m.genre,t.tagid,tg.tag
+from mlmovies m
+JOIN mltags t ON m.movieid = t.movieid
+JOIN genome_tags tg ON tg.tagid = t.tagid;
+
+
+alter table mltags add weight float after timestamp;
+
+
+select *FROM (select movieid,moviename from mlmovies)as a JOIN movie_actor ON a.movieid = movie_actor.movieid where actorid=6931 order by a.moviename;
+
+-------------Master Tables for TASK1-----------
+create Table master select b.movieid,b.moviename,b.genre,b.tagid,b.tag,b.timestamp,a.actorid FROM (select * from movie_actor ) as a JOIN  (select m.movieid,m.movieName,m.genre,t.tagid,t.timestamp,tg.tag FROM mlmovies m JOIN mltags t ON m.movieid = t.movieid JOIN genome_tags tg ON tg.tagid = t.tagid) as b ON a.movieid = b.movieid;
+
+
+
+-----------Finds all the movies and tags for a  given actorid----------
+
+select b.moviename,b.genre,b.tag,a.actor_movie_rank
+FROM
+(select * from movie_actor where actorid = 6931) as a
+JOIN 
+(select m.movieid,m.movieName,m.genre,t.tagid,tg.tag FROM mlmovies m
+JOIN mltags t ON m.movieid = t.movieid
+JOIN genome_tags tg ON tg.tagid = t.tagid) as b
+ON a.movieid = b.movieid
+
+--extract no of tags for actor and total tags for actor from above query---
+
+
+ 
+---gets no of actors---
+select count(actorid) from imdb_actor_info;
+
+
+---fetch all tags fors given actor------
+select tagid from master where actorid=2391;
+ 
+    
+NOTE:: needs to be called for every 
+---no of actors with tag t-----
+select count(actorid) master where tagid=123;
+
+===========================================================
+TASK-2
+===========================================================
+
+operates on task2 table:    mlovies JOIN mltags
+create Table task2 select m.movieid,m.tagid,m.userid,m.timestamp,m.weight,g.genre from mltags m JOIN 		     mlmovies g ON m.movieid=g.movieid;
+
+
+
+idf::
+no of genres     = select count(distinct genre) from mlmovies;   186
+no f genres with tag = select count(genre) from master where tagid=%s
+
+tf::
+res = select tagid,weight from task2 where genre=? 
+tagcount_this_genre = count for tag t
+total_tags_genre = distinct(res)
+
+compute
+
+no of movies this genre = count_this_genre  (since we have one-to-one mapping)
+
+====================
+TASK-3
+====================
+
+tf:
+	res = select tagid,weight from mltags where userid=%s;
+	tag_appears_for_this_user:  in res
+	total_tags_user = len(res)
+idf:
+	no_users = select count(userid) from mlusers;
+	no_users_with_tag_t = select 
+
+
+import datetime
+epoch = datetime.datetime.utcfromtimestamp(0)
+z = epoch - timestamp
+z.total_seconds()*1000  //for miliseconds  
+
+
