@@ -8,6 +8,10 @@ JOIN mltags t ON m.movieid = t.movieid
 JOIN genome_tags tg ON tg.tagid = t.tagid;
 
 
+select *FROM (select movieid,moviename from mlmovies)as a JOIN movie_actor ON a.movieid = movie_actor.movieid where actorid=6931 order by a.moviename;
+
+
+select *FROM (select movieid,moviename from mlmovies)as a JOIN movie_actor ON a.movieid = movie_actor.movieid where actorid=6931 order by a.moviename;
 
 select *FROM (select movieid,moviename from mlmovies)as a JOIN movie_actor ON a.movieid = movie_actor.movieid where actorid=6931 order by a.moviename;
 
