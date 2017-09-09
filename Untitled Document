@@ -8,14 +8,8 @@ JOIN mltags t ON m.movieid = t.movieid
 JOIN genome_tags tg ON tg.tagid = t.tagid;
 
 
-<<<<<<< HEAD
 alter table mltags add weight float after timestamp;
-=======
-select *FROM (select movieid,moviename from mlmovies)as a JOIN movie_actor ON a.movieid = movie_actor.movieid where actorid=6931 order by a.moviename;
 
-
-select *FROM (select movieid,moviename from mlmovies)as a JOIN movie_actor ON a.movieid = movie_actor.movieid where actorid=6931 order by a.moviename;
->>>>>>> 4f63be8f5fc85289e92af2e5a3682fac98fd0fc3
 
 select *FROM (select movieid,moviename from mlmovies)as a JOIN movie_actor ON a.movieid = movie_actor.movieid where actorid=6931 order by a.moviename;
 
@@ -55,26 +49,17 @@ select count(actorid) master where tagid=123;
 TASK-2
 ===========================================================
 
-<<<<<<< HEAD
 operates on task2 table:    mlovies JOIN mltags
 create Table task2 select m.movieid,m.tagid,m.userid,m.timestamp,m.weight,g.genre from mltags m JOIN 		     mlmovies g ON m.movieid=g.movieid;
 
 
-=======
-fetch movies for this genre::
-	select movieid,genre from mlmovies where genre=?;
->>>>>>> 4f63be8f5fc85289e92af2e5a3682fac98fd0fc3
 
 idf::
 no of genres     = select count(distinct genre) from mlmovies;   186
 no f genres with tag = select count(genre) from master where tagid=%s
 
 tf::
-<<<<<<< HEAD
 res = select tagid,weight from task2 where genre=? 
-=======
-res = select tagid from master where genre=? 
->>>>>>> 4f63be8f5fc85289e92af2e5a3682fac98fd0fc3
 tagcount_this_genre = count for tag t
 total_tags_genre = distinct(res)
 
@@ -86,7 +71,6 @@ no of movies this genre = count_this_genre  (since we have one-to-one mapping)
 TASK-3
 ====================
 
-<<<<<<< HEAD
 tf:
 	res = select tagid,weight from mltags where userid=%s;
 	tag_appears_for_this_user:  in res
@@ -101,6 +85,4 @@ epoch = datetime.datetime.utcfromtimestamp(0)
 z = epoch - timestamp
 z.total_seconds()*1000  //for miliseconds  
 
-=======
->>>>>>> 4f63be8f5fc85289e92af2e5a3682fac98fd0fc3
 
