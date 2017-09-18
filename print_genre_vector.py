@@ -4,15 +4,15 @@ from core import *
 
 args = sys.argv
 if len(args) < 3:
-    print 'Requires two args: actorid and model'
+    print 'Requires two args: genre and model'
     exit()
 
-actorid = args[1]
+genre = args[1]
 model = args[2]
 if model not in ['TF','TF-IDF']:
-    print "Wrong Model parameter! valid; TF / TF-IDF "
+    print "Wrong Model parameter ! valid; TF / TF-IDF "
     exit()
-vector = compute_TASK1(actorid,model)
+vector = compute_TASK2(genre,model)
 vector.sort(key=lambda student: student[2], reverse=True)
 
 for v in vector:
