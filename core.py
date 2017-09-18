@@ -26,13 +26,15 @@ for x in ret:
 rank_weights = []
 
 
+'''Helper function for computing temporal weights of timestamps and adding it into database
+    should be called before performing any tasks'''
 def compute_tag_weights():
 
     query = "SELECT * FROM information_schema.COLUMNS  WHERE  TABLE_SCHEMA = 'MWD_P1'  AND TABLE_NAME = 'mltags'  AND COLUMN_NAME = 'weight' "
     cursor.execute(query)
     ret = cursor.fetchall()
     if ret:
-        print "Weights have already been computed"
+        #print "Weights have already been computed"
         return
 
     query = "alter table mltags add weight float after timestamp"
@@ -114,7 +116,6 @@ def compute_TASK1(actorid,model):
 
     cursor.execute("select count(actorid) from imdb_actor_info")
     no_actors = cursor.fetchall()[0][0]
-
     #compute tf-idf for each tag found for this actor
     for t in set_tags:
         # print 'For tag :',t,"occurance count: ",tag_count[0][0]
@@ -142,7 +143,6 @@ def compute_TASK1(actorid,model):
             #print 'tag: ','tf:', tf_,' idf:',idf
             tfidf.append((t,tag_names[t],tf_idf))
     if model == 'TF':
-        print 'TF computed'
         return tf
     else:
         return tfidf
@@ -258,7 +258,7 @@ def compute_TASK3(userid,model):
         tf_n = no_of_t / float(no_tags)
         #print 'tag:', t, ' Normal sum: ', no_of_t, ' weighted: ', sum_weights
         tf_ = sum_weights / sum_tags
-        tf.append((t,tf_))
+        tf.append((t, tag_names[t], tf_))
         if model == 'TF-IDF':
             #cursor.execute("select count(distinct userid) from mltags where tagid=%s", (t,))
             #users_with_tag_t = cursor.fetchall()[0][0]
@@ -266,7 +266,6 @@ def compute_TASK3(userid,model):
             #select count(distinct b.userid) from mlratings b , mltags a  where tagid=%s and a.movieid=b.movieid
             cursor.execute("select count(distinct m.u) from  (select userid as u, movieid from mlratings where  movieid IN(select movieid from mltags where tagid = %s)) m", (t,))
             users_with_tag_t = cursor.fetchall()[0][0]
-            print t,': ',users_with_tag_t
             idf = math.log(no_users / users_with_tag_t, 10)
 
             tf_idf = tf_ * idf;
@@ -316,41 +315,35 @@ def compute_P_DIFF1(genre1,genre2,g1_tags,g2_tags):
         m = cursor.fetchall()[0][0]
         y=0
         x=0
-        #print  'TAG:',t,'r: ',r,' m:',m,' M:',M,' R_1:',R_1
+        print  'TAG:',t,'r: ',r,' m:',m,' M:',M,' R_1:',R_1
+        y = abs((float(r) / R_1) - (float(m - r) / (M - R_1)))
         if r==0 or r==m:
             #do smoothing
             prob_g1 = (float(r) + 0.5) / (R_1 + 1)
-            prob_g2 = (float(m) + 0.5) / ((M - R_1) +1)
+            prob_g2 = (float(m - r) + 0.5) / ((M - R_1) +1)
             x = ((prob_g1 * (1 - prob_g2)) / ((1 - prob_g1) * prob_g2))
+            y = abs(prob_g1 - prob_g2)
         else:
             x = (float(r)/(R_1 - r))/( float(m-r)/ (M - m - R_1 + r))
-        y = abs( (float(r)/R_1) - (float(m-r)/(M-R_1)) )
+        print x,' ',y
         weight = math.log(x,10)*y
         g1_weights.append((tag_names[t],weight))
-        #print '\tg1:',': ',weight
 
         # compue weights for genre 2
         r = 0
         cursor.execute("select count(distinct movieid) from task2 where genre like %s and tagid=%s",
                        ('%' + genre2 + '%', t))
         r = cursor.fetchall()[0][0]
-        #just swap r,m
-        #print  'TAG:',t,'r: ',r,' m:',m,' M:',M,' R:',R_2
+        y = abs((float(r) / R_2) - (float(m - r) / (M - R_2)))
+
         if r==0 or r==m:
             #do smoothing
             prob_g1 = (float(r) +0.5) / (R_2+1)
-            prob_g2 = (float(m)+0.5) / ((M - R_2)+1)
+            prob_g2 = (float(m - r)+0.5) / ((M - R_2)+1)
             x = ((prob_g1 * (1 - prob_g2)) / ((1 - prob_g1) * prob_g2))
-            '''
-        elif r == m:
-            print "r==m"
-            #division by zero  , actually meaning the feature present only in g1 We will make log(infinity) to be 1
-            #and let the ranking factor decide this
-            x=10  #make log(x) = 1 as base is 10'''
+            y = abs(prob_g1 - prob_g2)
         else:
             x = (float(r)/(R_2 - r))/( float(m-r)/ (M - m - R_2 + r))
-        y = abs( (float(r)/R_2) - (float(m-r)/(M-R_2)) )
-        #print x,' ',y
         weight = math.log(x,10)*y
         g2_weights.append((t,weight))
     print_diff(g1_weights,g2_weights)
@@ -380,34 +373,35 @@ def compute_P_DIFF2(genre1,genre2,g1_tags,g2_tags):
         y=0
         x=0
         #print  'TAG:',t,'r: ',r,' m:',m,' M:',M,' R:',R_2
+        y = abs((float(r) / R_2) - (float(m - r) / (M - R_2)))
         if r==0 or r==m:
             #do smoothing
             prob_g1 = (float(r) + 0.5) / (R_2 + 1)
-            prob_g2 = (float(m) + 0.5) / ((M - R_2) +1)
+            prob_g2 = (float(m - r) + 0.5) / ((M - R_2) +1)
             x = ((prob_g1 * (1 - prob_g2)) / ((1 - prob_g1) * prob_g2))
+            y = abs(prob_g1 - prob_g2)
         else:
             x = (float(r) / (R_2 - r)) / (float(m - r) / (M - m - R_2 + r))
 
-        y = abs( (float(r)/R_2) - (float(m-r)/(M-R_2)) )
-        #print  x,'   ',y
         weight = math.log(x,10)*y
         g1_weights.append((tag_names[t],weight))
-        #print '\tg1:',': ',weight
+
 
         # compue weights for genre 2
         r = 0
         cursor.execute("select count(distinct movieid) from task2 where genre like %s and tagid <> %s",('%' + genre1 + '%', t))
         r = cursor.fetchall()[0][0]
-        # just swap r,m
+
+        y = abs((float(r) / R_1) - (float(m - r) / (M - R_1)))
         if r == 0 or r==m:
             # do smoothing
             prob_g1 = (float(r) + 0.5) / (R_1 + 1)
-            prob_g2 = (float(m) + 0.5) / ((M - R_1) + 1)
+            prob_g2 = (float(m - r) + 0.5) / ((M - R_1) + 1)
             x = ((prob_g1 * (1 - prob_g2)) / ((1 - prob_g1) * prob_g2))
-
+            y = abs(prob_g1 - prob_g2)
         else:
             x = (float(r) / (R_1 - r)) / (float(m - r) / (M - m - R_1 + r))
-        y = abs((float(r) / R_1) - (float(m - r) / (M - R_1)))
+
 
         weight = math.log(x,10)*y
         g2_weights.append((tag_names[t],weight))
@@ -473,25 +467,3 @@ compute_tag_weights()
 rank_weights = compute_rank_weights()
 
 
-'''
-try:
-    cursor.execute(query)
-except mysql.connector.Error as err:
-        if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
-            print("already exists.")
-        else:
-            print(err.msg)
-else:
-    print("Table Created")
-
-csv_data = csv.reader(file('/home/kushalbhatt/ASU/ASU/MWD/phase1_dataset/imdb-actor-info.csv'))
-next(csv_data,None)
-
-for row in csv_data:
-    cursor.execute("INSERT INTO `imdb_actor_info` (`actorid`,`name`,`gender`) VALUES(%s,%s,%s)", row);
-    #cursor.execute("INSERT INTO `genome_tags` (`tagid`,`tag`) VALUES(%s,%s)",row);
-'''
-
-
-'''Helper function for computing temporal weights of timestamps and adding it into database
-    should be called before performing any tasks'''

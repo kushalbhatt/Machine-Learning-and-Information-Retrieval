@@ -6,10 +6,11 @@ import datetime
 
 import math
 
+#provide credentials and db name
 mydb = mysql.connector.connect(host='localhost',
     user='root',
-    passwd='padfoot',
-    db='test')
+    passwd='',
+    db='')
 
 
 cursor = mydb.cursor(buffered=True)
@@ -57,17 +58,11 @@ def insert_data(filename,query):
         cursor.execute(query, row)
 
 
-'''
+
 create_tables()
 for x,y in zip(filenames,insert_into_queries):
     insert_data(x,y)
-'''
-
-query = 'create Table if not exists task2 select m.movieid,m.tagid,m.userid,m.timestamp,g.genre from mltags m JOIN mlmovies g ON m.movieid=g.movieid'
-cursor.execute(query)
-print 'task2 is ready'
 #close the connection to the database.
 mydb.commit()
 cursor.close()
-
-print "Done"
+print "Db has been initialised"
