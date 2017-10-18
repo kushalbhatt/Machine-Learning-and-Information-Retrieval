@@ -9,7 +9,7 @@ import math
 mydb = mysql.connector.connect(host='localhost',
     user='root',
     passwd='padfoot',
-    db='MWD_P1')
+    db='MWD')
 
 cursor = mydb.cursor(buffered=True)
 
@@ -30,16 +30,16 @@ rank_weights = []
     should be called before performing any tasks'''
 def compute_tag_weights():
 
-    query = "SELECT * FROM information_schema.COLUMNS  WHERE  TABLE_SCHEMA = 'MWD_P1'  AND TABLE_NAME = 'mltags'  AND COLUMN_NAME = 'weight' "
+    query = "SELECT * FROM information_schema.COLUMNS  WHERE  TABLE_SCHEMA = 'mwd'  AND TABLE_NAME = 'mltags'  AND COLUMN_NAME = 'weight' "
     cursor.execute(query)
     ret = cursor.fetchall()
     if ret:
-        #print "Weights have already been computed"
+        print "Weights have already been computed"
         return
 
     query = "alter table mltags add weight float after timestamp"
     cursor.execute(query)
-    cursor.fetchall()
+    #cursor.fetchall()
 
     cursor.execute("select min(timestamp) from mltags")
     min_t = cursor.fetchall()[0][0]
@@ -97,7 +97,7 @@ def get_weight(tag_w,rank_w):
 def init_master_table():
     query='create Table IF NOT EXISTS master select b.movieid,b.moviename,b.genre,b.tagid,b.timestamp,b.weight,a.actorid,a.actor_movie_rank FROM (select * from movie_actor ) as a JOIN  (select m.movieid,m.movieName,m.genre,t.tagid,t.timestamp,t.weight FROM mlmovies m JOIN mltags t ON m.movieid = t.movieid ) as b ON a.movieid = b.movieid'
     cursor.execute(query)
-    print 'Master table ready'
+    #print 'Master table ready'
 
 def compute_TASK1(actorid,model):
     init_master_table()
@@ -150,7 +150,7 @@ def compute_TASK1(actorid,model):
 def init_task2_table():
     query = "create Table IF NOT EXISTS task2 select m.movieid,m.tagid,m.userid,m.timestamp,m.weight,g.genre from mltags m JOIN mlmovies g ON m.movieid=g.movieid"
     cursor.execute(query)
-    print 'task2 is ready'
+    #print 'task2 is ready'
 
 ''' Performs logic of task 2  '''
 def compute_TASK2(genre,model):
@@ -203,6 +203,88 @@ def compute_TASK2(genre,model):
             tf_idf = tf_ * idf;
             #print '\t weighted tf:', tf,' idf:',idf,' tf*idf = ',tf_idf
             #print "tag: ",t,"  : ",tf_idf
+            tfidf.append((t,tag_names[t], tf_idf))
+    if model == 'TF':
+        return tf
+    else:
+        return tfidf
+
+def compute_tf_idf_actor_genre(genre):
+    cursor.execute("select actorid,actor_movie_rank from master where genre like %s", ('%' + genre + '%',))
+    ret = cursor.fetchall()
+
+    actors = [x[0] for x in ret]
+    set_actors = set(actors)
+    no_actors = len(actors)
+
+    ranks = [x[1] for x in ret]
+    sum_ranks = 0
+    for r in ranks:
+        sum_ranks+=rank_weights[r]
+
+
+    cursor.execute("select count(DISTINCT genre) from master")
+    no_genres = cursor.fetchall()[0][0]
+
+    tfidf = []
+    for a in actors:
+        start = -1
+        sum_weights = 0
+        while True:
+            try:
+                i = actors.index(a, start + 1)
+            except ValueError:
+                break
+            else:
+                sum_weights += rank_weights[ranks[i]]
+                start = i
+
+        tf = sum_weights / sum_ranks
+        cursor.execute("select count(distinct genre) from master where actorid=%s", (a,))
+        genre_with_actor_a = cursor.fetchall()[0][0]
+        idf = math.log(no_genres / genre_with_actor_a, 10)
+        tf_idf = tf * idf;
+        tfidf.append((a, tf_idf))
+    return tfidf
+
+
+
+def compute_tf_idf_movie(movieid,model):
+    cursor.execute("select tagid,weight from master where movieid=%s", (movieid,))
+    ret = cursor.fetchall()
+
+    tags = [x[0] for x in ret]
+    set_tags = set(tags)
+    no_tags = len(tags)
+
+    weights = [x[1] for x in ret]
+    sum_tags = sum(weights)  # instead of total count , sum of all tag weights
+
+    # total no of different genres
+    cursor.execute("select count(DISTINCT movieid) from mlmovies")
+    no_movies = cursor.fetchall()[0][0]
+    tf = []
+    tfidf = []
+    for t in set_tags:
+        '''find tags and corresponding weights'''
+        start = -1
+        sum_weights = 0
+        while True:
+            try:
+                i = tags.index(t, start + 1)
+            except ValueError:
+                break
+            else:
+                sum_weights += weights[i]
+                start = i
+
+        tf_ = sum_weights / sum_tags
+        tf.append((t,tag_names[t],tf_))
+        if model == "TF-IDF":
+            cursor.execute("select count(distinct movieid) from master where tagid=%s", (t,))
+            movies_with_tag_t = cursor.fetchall()[0][0]
+            idf = math.log(no_movies / movies_with_tag_t, 10)
+            tf_idf = tf_ * idf;
             tfidf.append((t,tag_names[t], tf_idf))
     if model == 'TF':
         return tf

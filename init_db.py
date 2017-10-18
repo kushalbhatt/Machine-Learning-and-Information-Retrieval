@@ -9,17 +9,17 @@ import math
 #provide credentials and db name
 mydb = mysql.connector.connect(host='localhost',
     user='root',
-    passwd='',
-    db='')
+    passwd='padfoot',
+    db='mwd')
 
 
 cursor = mydb.cursor(buffered=True)
 
-home_dir = "phase1_dataset/"
+home_dir = "K:/ASU/MWD/Phase2_data/"
 
 
 create_queries = [ "create TABLE mltags (userid INT, movieid INT, tagid INT, timestamp DATETIME)" ,
-            "create TABLE mlmovies (movieid INT, moviename varchar(100), genre varchar(100))",
+            "create TABLE mlmovies (movieid INT, moviename varchar(100),year INT, genre varchar(100))",
             "create TABLE mlratings (movieid INT,userid INT, imdbid INT, rating INT,timestamp DATETIME)",
             "create TABLE mlusers (userid INT)",
             "create TABLE movie_actor (movieid INT, actorid INT, actor_movie_rank INT)",
@@ -28,7 +28,7 @@ create_queries = [ "create TABLE mltags (userid INT, movieid INT, tagid INT, tim
 
 insert_into_queries = [
             "INSERT INTO `mltags` (`userid`,`movieid`,`tagid`,`timestamp`) VALUES(%s,%s,%s,%s)",
-            "INSERT INTO `mlmovies` (`movieid`,`moviename`,`genre`) VALUES(%s,%s,%s)",
+            "INSERT INTO `mlmovies` (`movieid`,`moviename`,`year`,`genre`) VALUES(%s,%s,%s,%s)",
             "INSERT INTO `mlratings` (`movieid`,`userid`,`imdbid`,`rating`,`timestamp`) VALUES(%s,%s,%s,%s,%s)",
             "INSERT INTO `mlusers` (`userid`) VALUES(%s)",
             "INSERT INTO `movie_actor` (`movieid`,`actorid`,`actor_movie_rank`) VALUES(%s,%s,%s)",
@@ -36,6 +36,7 @@ insert_into_queries = [
             "INSERT INTO `genome_tags` (`tagid`,`tag`) VALUES(%s,%s)" ]
 
 filenames = ['mltags.csv', 'mlmovies.csv','mlratings.csv','mlusers.csv','movie-actor.csv','imdb-actor-info.csv','genome-tags.csv']
+
 
 
 def create_tables():
@@ -62,6 +63,7 @@ def insert_data(filename,query):
 create_tables()
 for x,y in zip(filenames,insert_into_queries):
     insert_data(x,y)
+
 #close the connection to the database.
 mydb.commit()
 cursor.close()
